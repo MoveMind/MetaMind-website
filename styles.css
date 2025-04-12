@@ -1,0 +1,118 @@
+/* Reset */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ body {
+   font-family: 'Roboto', sans-serif; /* Base font for tagline and footer */
+   color: white;
+   height: 100vh;
+   background: linear-gradient(135deg, #6a0dad, #000000);
+   overflow: hidden;
+   position: relative;
+ }
+ 
+ /* Dynamic Background Animation */
+ body::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background: radial-gradient(circle at 50% 50%, #6a0dad, #000000, #1a1a1a);
+   z-index: -1;
+   animation: moveBackground 10s infinite linear;
+ }
+ 
+ /* Background animation */
+ @keyframes moveBackground {
+   0% { background-position: 0% 0%; }
+   50% { background-position: 50% 50%; }
+   100% { background-position: 0% 0%; }
+ }
+ 
+ .main-container {
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: calc(100vh - 80px); /* Adjusting space for footer */
+ }
+ 
+ /* Logo */
+ .logo {
+   position: absolute;
+   top: 20px;
+   left: 20px;
+   width: 90px;
+ }
+ 
+ /* Headline */
+ .headline {
+   font-family: 'Orbitron', sans-serif; /* Tech font specifically for the headline */
+   font-size: 5rem; /* Bigger font size */
+   font-weight: 700;
+   margin-bottom: 1.5rem;
+   background: linear-gradient(90deg, #ffffff, #b06ab3);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
+ 
+ /* Tagline */
+ .tagline {
+   font-family: 'Roboto', sans-serif; /* Sleek, readable font for tagline */
+   font-size: 1.8rem; /* Reduced font size */
+   margin-bottom: 2rem;
+   color: rgba(255, 255, 255, 0.9);
+ }
+ 
+ 
+ /* Docs Button */
+ .btn {
+   display: inline-block;
+   padding: 15px 30px; /* Larger button */
+   font-size: 1.7rem;
+   font-weight: bold;
+   color: white;
+   background: linear-gradient(90deg, #9a1ed3, #b06ab3);
+   border: none;
+   border-radius: 35px;
+   text-decoration: none;
+   box-shadow: 0px 6px 20px rgba(181, 132, 190, 0.5);
+   animation: bounceButton 2.5s infinite ease-in-out; /* Keep animation for button */
+   transition: all 0.3s ease;
+ }
+ 
+ .btn:hover {
+   transform: scale(1.1);
+   box-shadow: 0px 8px 25px rgba(186, 104, 200, 0.7);
+ }
+ 
+ /* Footer */
+ footer {
+   font-family: 'Roboto', sans-serif; /* Modern font for footer */
+   position: absolute;
+   bottom: 10px; /* Sticks to the bottom */
+   width: 100%;
+   text-align: center;
+   font-size: 1.2rem;
+   color: rgba(255, 255, 255, 0.8);
+ }
+ 
+ footer a {
+   color: #ffffff;
+   text-decoration: none;
+   margin: 0 15px;
+ }
+ 
+ footer a:hover {
+   text-decoration: underline;
+ }
+ 
+ /* Button Animation - Bounce */
+ @keyframes bounceButton {
+   0%, 100% { transform: translateY(0); }
+   50% { transform: translateY(-5px); }
+ }
+ 
